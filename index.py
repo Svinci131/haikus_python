@@ -1,13 +1,24 @@
-
 import os
-print "hello"
+from syllableCounting import getSyllables 
 
+# (list of words) => haiku as str
+def createHaiku(data):
+	haiku = "";
+	order = [5,7,5]; 
+	for word in data:
+		getSyllables(word)
+
+# (str) => list of words
+# def readFile (fileName):
 dirpath = os.path.relpath('textFiles')
 fpath = os.path.join(dirpath, "timeMachine.txt")
 f = open(fpath)
-content = f.read()
+content = f.read().split();
+createHaiku(content)
 
-print content
-# with open('textFiles/timeMachine.txt') as f:
-# 	content = f.readlines();
-# READ FILE
+
+
+
+
+# array vs list
+
