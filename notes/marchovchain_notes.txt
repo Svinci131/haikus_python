@@ -1,0 +1,33 @@
+
+	# I like bread# I like cofee# I dont like cake
+	# I {
+	# 	like: .66
+	# 	dont: .33
+	# }
+	# like {
+	# 	# coffee: .33
+	# 	# bread: .33
+	# 	# cake: .33
+	# }
+	# we need it to also factor in before " I like" - should either do coffee or bread" "I don't like" should only out put cake?
+
+	# I {
+	# 	.66 : like :
+					# coffee: .33
+					# bread: .33
+	# 	.33 : { don't : {
+					#1: like: 
+						# cake: .33
+			   #}
+	#}#
+
+# we could start with a non absorbing Markov 
+# loop through each word - 
+	# if not the first- look at the word before it 
+	# if there's a ref to it 
+
+
+	
+	# if it doesn't exist add it
+	# look at the 
+ 
