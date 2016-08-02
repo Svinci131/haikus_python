@@ -17,3 +17,8 @@ PHASE FIVE-
 # TWITTER BOT
 
 
+_____
+
+	- if a word is one syllable write a file of ne syllable words
+	- add a check to see if a syllable is that word - to help with random silent es
+

@@ -6,9 +6,9 @@ def isVowel(letter, i):
 		return True;
 	else: 
 		return False
+
 # (str) => num
 def getSyllables(string):
-
 	syllables = 0
 	letters = list(string.lower());
 	last = len(letters)-1;
@@ -26,9 +26,5 @@ def getSyllables(string):
 		
 	return syllables
 
-# ('preserve', 3, 2)
-# ('engagement', 4, 3)
-# ('lynx', 0, 1)
-# ('happy', 1, 2)
-	#get all vowels that aren't the last letter and aren't next to another vowel
-	#your, he, quiet, boy, lynx, happy, preserve, resevior 
+
+

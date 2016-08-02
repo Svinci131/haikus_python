@@ -1,5 +1,7 @@
 import os
 from syllableCounting import getSyllables 
+from random import randint
+
 
 def testSyllables():
 	tests = {
@@ -24,19 +26,35 @@ def testSyllables():
 # (list of words) => haiku as str
 def createHaiku(data):
 	haiku = "";
-	order = [5,7,5]; 
-	testSyllables()
-	# print (getSyllables('Ferret'), "should be 2")
-	# print (getSyllables('about'), "should be 2"); 
-	# print (getSyllables('shoe'), "should be 1"); 
-	# print (getSyllables('Boy'), "should be 1"); 
-	# print (getSyllables('lynx'),"should be 1");
-	# print (getSyllables('happy'),"should be 2");
-	# print (getSyllables('preserve'), "sould be two");
-	# print (getSyllables('resevior'), "should be 3"); 
-	# print (getSyllables("engagement"), "should be 3")
-	# for word in data:
-	# 	getSyllables(word)
+	lines = [5,7,5]; 
+
+	for line in lines: 
+		haiku += writeLine(line, data)
+
+	print haiku
+
+# (num, list) => string, line of that many syllables 
+def writeLine (numOfSylbs, data): 
+	remainingSylbs = numOfSylbs
+	end = len(data)-1;
+	start = randint(0, end)
+	line = ""
+
+	while(remainingSylbs > 0):
+		for i in range(start, end):
+			word = data[i]
+			sylbCount = getSyllables(word)
+			if sylbCount <= remainingSylbs:
+
+				if len(line) == 0: 
+					line += word
+				else:
+					line += (" "+word)
+
+				remainingSylbs -= sylbCount
+				if (remainingSylbs == 0):
+					break;
+	return line+"\n"
 
 # (str) => list of words
 def readFile (fileName):
