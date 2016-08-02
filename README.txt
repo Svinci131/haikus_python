@@ -1,0 +1,1 @@
+As part of a school project, I built a simple Haiku generator using JS. I'm now rebuilding it using a marchov chain. (Also a chance to practice using Python). 
