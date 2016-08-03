@@ -2,21 +2,7 @@
 import os
 import re
 import string
-
-def flattenLines(text):
-	text = text.split("\n")
-	content = ""
-	for fragment in text: 
-		if (fragment != ""):
-			content+=(" "+(fragment))
-	return content
-
-def readFile (fileName):
-	dirpath = os.path.relpath('../textFiles')
-	fpath = os.path.join(dirpath, fileName)
-	f = open(fpath)
-	content = f.read().split('End of Project Gutenberg')[0]
-	return flattenLines(content)
+from readFile import readFile 
 
 def calProbability (state): 
 	transitions = len(state.keys())
@@ -52,8 +38,7 @@ def generateMarchovChain():
 # corpus = readFile("timeMachine.txt").lower();
 # corpus = corpus.translate(string.maketrans("",""), string.punctuation)
 # corpus = corpus.split();
-chain =  generateMarchovChain()
-print chain
+
 
 
 

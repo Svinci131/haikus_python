@@ -1,40 +1,50 @@
 from readFile import readFile 
 from syllableCounting import getSyllables 
+import random
 from random import randint
-
+from simpleMarchovChain import generateMarchovChain
 # (list of words) => haiku as str
+
 def createHaiku(fileName):
-	data = readFile(fileName).split();
+	data = generateMarchovChain()
 	haiku = "";
 	lines = [5,7,5]; 
 
 	for line in lines: 
-		haiku += writeLine(line, data)
+		writeLine(line, data)
 
-	print haiku
+# 	print haiku
 
-# (num, list) => string, line of that many syllables 
+# # (num, list) => string, line of that many syllables 
 def writeLine (numOfSylbs, data): 
 	remainingSylbs = numOfSylbs
-	end = len(data)-1;
-	start = randint(0, end)
+	end = len(data.keys())
+	currState = random.choice(data.keys()); 
 	line = ""
-
 	while(remainingSylbs > 0):
-		for i in range(start, end):
-			word = data[i]
-			sylbCount = getSyllables(word)
-			if sylbCount <= remainingSylbs:
+		line += (currState+" ");
+		state = data[currState]; 
+		nextState = state.keys()[0]
+		currState = nextState;
+		remainingSylbs-=1
+	print (line);
+# 	line = ""
 
-				if len(line) == 0: 
-					line += word
-				else:
-					line += (" "+word)
+# 	while(remainingSylbs > 0):
+# 		for i in range(start, end):
+# 			word = data[i]
+# 			sylbCount = getSyllables(word)
+# 			if sylbCount <= remainingSylbs:
 
-				remainingSylbs -= sylbCount
-				if (remainingSylbs == 0):
-					break;
-	return line+"\n"
+# 				if len(line) == 0: 
+# 					line += word
+# 				else:
+# 					line += (" "+word)
+
+# 				remainingSylbs -= sylbCount
+# 				if (remainingSylbs == 0):
+# 					break;
+# 	return line+"\n"
 
 
 
