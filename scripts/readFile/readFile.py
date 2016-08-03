@@ -1,4 +1,5 @@
 import os
+import sys
 import nltk
 import nltk.data
 from nltk.tokenize import sent_tokenize, word_tokenize
@@ -22,11 +23,21 @@ def formatText(text):
 	text = sent_tokenize(text)
 	return text
 
+def parseText(text):
+	corpus = text.lower();
+	corpus = corpus.translate(string.maketrans("",""), string.punctuation)
+	corpus = corpus.split();
+
 # (str) => list of words
 def readFile (fileName):
-	dirpath = os.path.relpath('textFiles')
-	fpath = os.path.join(dirpath, fileName)
+	basepath = os.path.dirname(__file__)
+	fpath = os.path.abspath(os.path.join(basepath, "..", "../textFiles", fileName))
+	 # dirpath = os.path.relpath('../../textFiles')
+	 # fpath = os.path.join(dirpath, fileName)
 	f = open(fpath)
 	content = f.read()
 	# content = formatText(content)
 	return content
+
+
+

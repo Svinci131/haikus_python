@@ -1,1 +1,1 @@
-from .readFile import readFile
+from readFile import readFile

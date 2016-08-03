@@ -2,15 +2,12 @@
 import os
 import re
 import string
+import sys
+basePath = '/Users/samanthavinci/Desktop/literaryHaiku/scripts/'
+sys.path.append(basePath+'readFile')
 from readFile import readFile 
 
-def calProbability (state): 
-	transitions = len(state.keys())
-
-# calculate the probability value by multiplying the probabilities in dict. 
-# In this case probability of all state transition is
-
-def generateMarchovChain():
+def generateMarkovChain():
 	# parse text
 	corpus = readFile("timeMachine.txt").lower();
 	corpus = corpus.translate(string.maketrans("",""), string.punctuation)
@@ -39,6 +36,13 @@ def generateMarchovChain():
 # corpus = corpus.translate(string.maketrans("",""), string.punctuation)
 # corpus = corpus.split();
 
+
+
+# def calProbability (state): 
+# 	transitions = len(state.keys())
+
+# calculate the probability value by multiplying the probabilities in dict. 
+# In this case probability of all state transition is
 
 
 
