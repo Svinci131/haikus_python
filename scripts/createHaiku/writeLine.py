@@ -2,6 +2,13 @@ import random
 from random import randint
 from syllableCounting import getSyllables 
 
+def getNextState(currState):
+	nextState = random.choice(currState['possibilities'])
+	return nextState
+	# possibilities = state.keys()
+	# for key, value in currState.items():
+		
+
 # # (num, dictionary) => string, line of that many syllables 
 def writeLine (numOfSylbs, data): 
 	remainingSylbs = numOfSylbs
@@ -11,10 +18,10 @@ def writeLine (numOfSylbs, data):
 	while(remainingSylbs > 0):
 		line += (currState+" ");
 		state = data[currState]; 
-		nextState = state.keys()[0]
+		nextState = getNextState(state)
 		currState = nextState;
 		remainingSylbs-=1
-	print (line);
 
+	print line
 	return line
 

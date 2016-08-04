@@ -7,6 +7,7 @@ basePath = '/Users/samanthavinci/Desktop/literaryHaiku/scripts/'
 sys.path.append(basePath+'readFile')
 from readFile import readFile 
 
+#BUG DIDNT ADD IF IT REPEATS
 def generateMarkovChain():
 	# parse text
 	corpus = readFile("timeMachine.txt").lower();
@@ -19,15 +20,15 @@ def generateMarkovChain():
 		if (index != last):
 			Next = corpus[(index+1)]
 			state = {}
+
 			if word in chain:
 				state = chain[word]
-				if Next in state:
-					state[Next] += 1
-				else:
-					state[Next] = 1
-			else: 
-				state[Next] = 1
-				chain[word] = state
+				state['possibilities'].append(Next)
+			else:
+				state['possibilities'] = []
+				state['possibilities'].append(Next)
+			chain[word] = state
+
 
 	return chain
 

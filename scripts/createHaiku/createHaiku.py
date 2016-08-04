@@ -7,8 +7,6 @@ from writeLine import writeLine
 sys.path.append(basePath+'markovChains')
 from simpleMarkovChain import generateMarkovChain
 
-
-
 # (filename) => haiku as str
 def createHaiku(fileName):
 	data = generateMarkovChain()
@@ -18,7 +16,7 @@ def createHaiku(fileName):
 	for line in lines: 
 		writeLine(line, data)
 
-	# print haiku
+	print haiku
 
 
 
