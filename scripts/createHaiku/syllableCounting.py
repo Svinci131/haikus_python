@@ -13,6 +13,8 @@ def getSyllables(string):
 	letters = list(string.lower());
 	last = len(letters)-1;
 	vowelCount = 0; 
+	if (len(string) == 1): 
+		return 1
 
 	for index, letter in enumerate(letters):
 		prev = letters[(index-1)]; 
@@ -54,7 +56,8 @@ def testSyllables():
 		"medium":3,
 		"unemployed": 4, 
 		"the":1,
-		"at":1
+		"at":1,
+		"I":1
 	}
 
 	for key, value in tests.items():
@@ -62,4 +65,4 @@ def testSyllables():
 		if (sylables != value):
 			print (key, sylables, value)
 
-testSyllables()
+#

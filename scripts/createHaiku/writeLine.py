@@ -35,9 +35,8 @@ def writeLine (numOfSylbs, data, start):
 		sylbs = getSyllables(currState);
 		remainingSylbs-=sylbs;
 		line.append(currState);
-		
+
 		if (remainingSylbs > 0):
-			print ("here", line, currState, sylbs, remainingSylbs)
 			possibilities = getPossiblities(data[currState], remainingSylbs)
 			if ((len(possibilities)-1) <= 0): 
 				line.pop();
@@ -46,4 +45,4 @@ def writeLine (numOfSylbs, data, start):
 			else:
 				currState = random.choice(possibilities)
 	
-	return line
+	return " ".join(line)
