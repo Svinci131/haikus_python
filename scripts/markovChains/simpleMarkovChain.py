@@ -23,11 +23,16 @@ def generateMarkovChain():
 
 			if word in chain:
 				state = chain[word]
-				state['possibilities'].append(Next)
+				if Next in state: 
+					state[Next]+= 1
+				else: 
+					state[Next] = 1
+				#state['possibilities'].append(Next)
 			else:
-				state['possibilities'] = []
-				state['possibilities'].append(Next)
-			chain[word] = state
+				#state['possibilities'] = []
+				#state['possibilities'].append(Next)
+				state[Next] = 1
+				chain[word] = state
 
 
 	return chain
