@@ -8,8 +8,8 @@ sys.path.append(basePath+'markovChains')
 from simpleMarkovChain import generateMarkovChain
 
 # (filename) => haiku as str
-def createHaiku(fileName):
-	data = generateMarkovChain()
+def createHaiku(text):
+	data = generateMarkovChain(text)
 	# haiku = "";
 	# lines = [5,7,5]; 
 	# # print writeLine(5, data)

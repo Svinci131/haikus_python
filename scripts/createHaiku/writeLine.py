@@ -35,23 +35,15 @@ def writeLine (numOfSylbs, data, start):
 		sylbs = getSyllables(currState);
 		remainingSylbs-=sylbs;
 		line.append(currState);
-		#print ("befoer", line, currState, sylbs, remainingSylbs)
+		
 		if (remainingSylbs > 0):
 			print ("here", line, currState, sylbs, remainingSylbs)
 			possibilities = getPossiblities(data[currState], remainingSylbs)
 			if ((len(possibilities)-1) <= 0): 
-				#badStates[currState] = True
 				line.pop();
 				remainingSylbs+=getSyllables(currState)
 				currState = getRandomFirstState(remainingSylbs, data)
 			else:
 				currState = random.choice(possibilities)
-			# find a next state 
-			#nextState = getNextState(currState, remainingSylbs, data);	
-			#resetBad States
-			#badStates = {}
-			#replace w dict
-		
-		
 	
 	return line

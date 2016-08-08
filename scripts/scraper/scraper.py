@@ -12,6 +12,7 @@ def getTextByAuthor(firstName, lastName):
 	print firstName, lastName
 
 def getRandomTextId(): 
+	
 	BASE_URL = 'https://www.gutenberg.org'
 	letter = random.choice(string.ascii_letters)
 	menuUrl = 'http://www.gutenberg.org/browse/authors/'+letter
@@ -33,11 +34,11 @@ def getRandomTextId():
 
 
 def getRandomText():
+
 	bookId = getRandomTextId()
-	print ("here", type(bookId))
-	
 	url = "http://www.gutenberg.org/cache/epub/"+bookId+"/pg"+bookId+".txt"
 	text = None
+
 	try: 
 		html = urllib2.urlopen(url).read()
 		soup = BeautifulSoup(html, "lxml")

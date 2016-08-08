@@ -1,17 +1,11 @@
 # (str) => list of words
-import os
 import re
 import string
-import sys
-basePath = '/Users/samanthavinci/Desktop/literaryHaiku/scripts/'
-sys.path.append(basePath+'readFile')
-from readFile import readFile 
 
 #BUG DIDNT ADD IF IT REPEATS
 def generateMarkovChain(text):
 	# parse text
-	#corpus = readFile("timeMachine.txt").lower();
-	corpos = text.lower()
+	corpus = text.lower()
 	corpus = corpus.translate(string.maketrans("",""), string.punctuation)
 	corpus = corpus.split();
 	# parse text
