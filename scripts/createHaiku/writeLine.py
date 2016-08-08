@@ -9,12 +9,12 @@ line = []
 def getPossiblities(possibleStates, remainingSylbs):
 	possibilities = []
 	for key, value in possibleStates.items():
-		if ((key in badStates) != True):
-			sylbs = getSyllables(key)
-			if sylbs <= remainingSylbs: 
-				for i in range(1, value):
-					#{'val': key, 'sylbs': sylbs}
-					possibilities.append(key)
+		#if ((key in badStates) != True):
+		sylbs = getSyllables(key)
+		if sylbs <= remainingSylbs: 
+			for i in range(1, value):
+				#{'val': key, 'sylbs': sylbs} d
+				possibilities.append(key)
 	return possibilities
 
 def getRandomFirstState(sylbMax, data): 
@@ -29,17 +29,18 @@ def writeLine (numOfSylbs, data, start):
 	remainingSylbs = numOfSylbs
 	currState = getRandomFirstState(remainingSylbs, data) # or start
 	#while there are syllables
-	
+
 	while(remainingSylbs > 0):
 		# add the current state to line 
 		sylbs = getSyllables(currState);
 		remainingSylbs-=sylbs;
 		line.append(currState);
-		print ("befoer", line, currState, sylbs, remainingSylbs)
+		#print ("befoer", line, currState, sylbs, remainingSylbs)
 		if (remainingSylbs > 0):
+			print ("here", line, currState, sylbs, remainingSylbs)
 			possibilities = getPossiblities(data[currState], remainingSylbs)
 			if ((len(possibilities)-1) <= 0): 
-				badStates[currState] = True
+				#badStates[currState] = True
 				line.pop();
 				remainingSylbs+=getSyllables(currState)
 				currState = getRandomFirstState(remainingSylbs, data)
@@ -48,7 +49,7 @@ def writeLine (numOfSylbs, data, start):
 			# find a next state 
 			#nextState = getNextState(currState, remainingSylbs, data);	
 			#resetBad States
-			badStates = {}
+			#badStates = {}
 			#replace w dict
 		
 		

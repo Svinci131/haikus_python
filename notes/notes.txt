@@ -1,9 +1,8 @@
 PHASE ONE _ DICTIONARY FILE
 
 # 1 READ FILE
-# 2 FORMATSPLIT
-# 3 GET WORDS 
-# 4 GET THE SYLLABLES IN THOSE WORDS
+# 2 GET THE SYLLABLES IN THOSE WORDS
+# 3 WRITE HAIKU RANDOMLY FROM TIME MACHINE
 
 daylight at the top. I went
 sickness and confusion that
@@ -11,25 +10,29 @@ a premium on The work of
 
 
 PHASE TWO - SIMPLE MARCHOV CHAIN 
+
+#1 PARSES TEXT INTO WORDS 
+#2 SELECTS A WORDS BASED OFF OF PROBABILITY
+#3 FILTERS BY SYLLABLE COUNT
+
 repeated a childs might be
 mouths were heaps of all imitated the
 hospitality said and crumpled heaps
 
-PHASE THREE - ABSORBING MARCHOV CHAIN 
+PHASE THREE - SCRAPPING/UI
 
+#1 CREATE MODULE THAT WHEN INSTALLED SPITS OUT
+	#a A HAIKU FROM A RANDOM BOOK 
+	#b A HAIKU FROM A BOOK THE USER ENTERED 
 
-PHASE FOUR - 
-# PICK RANDOM BOOK - SCRAPPER
-# TEST 
+PHASE FOUR - ABSORBING MARCHOV CHAIN 
+	# PARSES BY SENTANCE
+	# INSTEAD OF TRANSITIONING AND REPLACING THE CURRENT STATE
+	# THE CURRENT STATE WILL ABSORB THE LAST N STATES AND USE THAT TO PREDICT NEXT
 
 PHASE FIVE- 
-# TWITTER BOT
+	# TWITTER BOT
 
 //https://www.gutenberg.org/browse/authors/w
-//
 
-_____
-
-	- if a word is one syllable write a file of ne syllable words
-	- add a check to see if a syllable is that word - to help with random silent es
 

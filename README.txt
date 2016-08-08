@@ -4,6 +4,8 @@ RESOURCES:
 
 Marchov Chains:
 
+http://quant-econ.net/py/finite_markov.html
+
 http://www.cs.princeton.edu/courses/archive/spr05/cos126/assignments/markov.html
 
 http://awalsh128.blogspot.com/2013/01/text-generation-using-markov-chains.html

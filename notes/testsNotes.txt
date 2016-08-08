@@ -1,0 +1,5 @@
+In generate
+#if the end word ends in a .,?! forget it 
+
+In write line
+#if there are no nexts ignore the word add comma pick random one
