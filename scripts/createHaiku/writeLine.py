@@ -27,14 +27,20 @@ def getRandomFirstState(sylbMax, data):
 # # (num, dictionary) => string, line of that many syllables 
 def writeLine (numOfSylbs, data, start): 
 	remainingSylbs = numOfSylbs
-	currState = getRandomFirstState(remainingSylbs, data) # or start
+	addFirst = True
+	if (start == None): 
+		currState = getRandomFirstState(remainingSylbs, data) # or start
+	else: 
+		currState = start
+		addFirst = False
 	#while there are syllables
 
 	while(remainingSylbs > 0):
 		# add the current state to line 
-		sylbs = getSyllables(currState);
-		remainingSylbs-=sylbs;
-		line.append(currState);
+		if addFirst == True:
+			sylbs = getSyllables(currState);
+			remainingSylbs-=sylbs;
+			line.append(currState);
 
 		if (remainingSylbs > 0):
 			possibilities = getPossiblities(data[currState], remainingSylbs)
@@ -44,5 +50,6 @@ def writeLine (numOfSylbs, data, start):
 				currState = getRandomFirstState(remainingSylbs, data)
 			else:
 				currState = random.choice(possibilities)
+			addFirst = True
 	
 	return " ".join(line)
