@@ -1,2 +1,2 @@
-from .createHaiku import createHaiku
-from .syllableCounting import syllableCounting
+from createHaiku import createHaiku
+#from createHaiku import createHaiku.syllableCounting

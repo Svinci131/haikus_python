@@ -8,9 +8,10 @@ sys.path.append(basePath+'readFile')
 from readFile import readFile 
 
 #BUG DIDNT ADD IF IT REPEATS
-def generateMarkovChain():
+def generateMarkovChain(text):
 	# parse text
-	corpus = readFile("timeMachine.txt").lower();
+	#corpus = readFile("timeMachine.txt").lower();
+	corpos = text.lower()
 	corpus = corpus.translate(string.maketrans("",""), string.punctuation)
 	corpus = corpus.split();
 	# parse text
